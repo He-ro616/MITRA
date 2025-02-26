@@ -3,125 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MITRA - Disaster Management</title>
+    <title>Disaster Relief Chatbot</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        section {
-            padding: 20px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        button {
-            padding: 10px;
-            background: #28a745;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background: #218838;
-        }
-        form input {
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <h1>MITRA - Disaster Management App</h1>
-        <nav>
-            <ul>
-                <li><a href="#awareness">Awareness</a></li>
-                <li><a href="#safety-guide">Safety Guide</a></li>
-                <li><a href="#emergency-call">Emergency Call</a></li>
-                <li><a href="#volunteer">Volunteer Enrollment</a></li>
-                <li><a href="#chatbot">Offline Chatbot</a></li>
-                <li><a href="#maps">Offline Maps</a></li>
-                <li><a href="#alerts">Alerts</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="awareness">
-        <h2>Awareness</h2>
-        <p>Providing disaster prevention awareness and mitigation knowledge.</p>
-    </section>
-
-    <section id="safety-guide">
-        <h2>Pre-loaded Safety Guide</h2>
-        <p>Access self-help guidance, disaster preparation tips, and response methods.</p>
-    </section>
-
-    <section id="emergency-call">
-        <h2>Emergency Call</h2>
-        <button onclick="makeEmergencyCall()">Call Emergency</button>
-    </section>
-
-    <section id="volunteer">
-        <h2>Volunteer Enrollment</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <button type="submit">Enroll</button>
-        </form>
-    </section>
-
-    <section id="chatbot">
-        <h2>Offline Chatbot</h2>
-        <p>Chatbot support for self-rescue and safe evacuation guidance.</p>
-    </section>
-
-    <section id="maps">
-        <h2>Offline Maps</h2>
-        <p>Access maps even with low internet connectivity.</p>
-    </section>
-
-    <section id="alerts">
-        <h2>Alert Notifications</h2>
-        <button onclick="showAlert()">Check Alerts</button>
-        <p id="alert-message"></p>
-    </section>
-
-    <script>
-        function makeEmergencyCall() {
-            window.location.href = "tel:112";
-        }
-
-        function showAlert() {
-            document.getElementById("alert-message").innerText = "No active alerts at the moment.";
-        }
-    </script>
+    <div class="chat-container">
+        <h2>Disaster Relief Chatbot</h2>
+        <div class="chat-box" id="chat-box">
+            <!-- Chat messages will be added here dynamically -->
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type a message..." autocomplete="off">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
