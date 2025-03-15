@@ -20,7 +20,7 @@
   }
   
   .user-chat-box {
-    width: 60%;
+    width: 50%;
     position: relative;
     left: 40%;
     display: none; /* Initially hidden */
@@ -38,21 +38,22 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     gap: 10px;
+    right:15%;
     flex-direction: column;
   }
   .ai-chat-area {
-    width: 90%;
+    width: 99%;
     padding: 20px;
     background-color: rgb(59, 57, 57);
     color: aliceblue;
     position: relative;
-    left: 10%;
+    left: 15%;
     border-radius: 0px 40px 40px 40px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   }
   #user-image {
     position: absolute;
-    right: 0;
+    left: 95%;
     filter: drop-shadow(1px 1px 1px black);
   }
   #ai-image {
