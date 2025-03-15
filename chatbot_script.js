@@ -72,6 +72,7 @@ function handleChatResponse(message) {
     user.message = message;
 
     let userHtml = `<img src="user-image.png" width="65" id="user-image">
+        <br><br><br>
         <div class="user-chat-area">
             ${message}
             ${user.file.data ? `<img src="data:${user.file.mime_type};base64,${user.file.data}" class="chooseimg" />` : ""}
@@ -84,6 +85,7 @@ function handleChatResponse(message) {
 
     setTimeout(() => {
         let aiHtml = `<img src="ai-image.png" width="65" id="ai-image" />
+        <br><br><br>
         <div class="ai-chat-area"></div>`;
         let aiChatBox = createChatBox(aiHtml, "ai-chat-box");
         chatContainer.appendChild(aiChatBox);
