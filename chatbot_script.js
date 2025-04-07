@@ -8,7 +8,7 @@ let loader = document.getElementById('loader');
 
 const Api_Url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyD0D1GTwjqmY7RlizcHuyFivlzEKAIqdAo";
 
-const system_prompt = "You are Mitra, an AI chatbot designed to assist in disaster management. Your goal is to provide real-time information, emergency response guidance, resource allocation help, and crisis communication support. Give concise and meaningfull response";
+const system_prompt = "You are Aryan , an AI chatbot designed to assist during study of aktu syllabus . Your goal is to provide real-time information help , resource for paper solving , and   friendly response . Give concise and meaningfull response";
 
 let user = {
     message: null,
