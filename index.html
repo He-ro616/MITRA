@@ -7,8 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Boldonse&family=Jaini&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-xh6j12YZWWv/5H+UvG0B9M6oCGURV1HYwYhMjZcC8o9QOTeZ+JlSkP6YbXlbGKX5+Q+AkF8xl1pVoZufF2kJTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <style>
       * {
@@ -17,201 +24,174 @@
         font-family: "Poppins", sans-serif;
         box-sizing: border-box;
       }
+
+      body {
+        background-color: #f1f2f6;
+      }
+
       .header {
         width: 100%;
         height: 80px;
-        font-size: 40px;
+        font-size: 36px;
         font-weight: 900;
         color: #f2b200;
-        text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: #1e1e1e;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         position: fixed;
         top: 0;
-        left: 0;
-        z-index: 1000;
+        z-index: 999;
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
+
       .main {
+        margin-top: 100px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        min-height: 100vh;
-        padding: 0;
-        animation: fadeIn 1s ease-out;
-        margin-top: 0;
-        background-color: #f7f7f7;
+        padding: 40px 20px;
       }
-      .container1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 100px;
-      }
+
+      .container1,
       .container2 {
         display: flex;
         justify-content: center;
-        align-items: center;
-        margin-top: 50px;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 40px;
       }
+
       .box {
-        width: 320px;
-        height: 200px;
+        width: 300px;
+        height: 230px;
         background-color: #ffffff;
-        border: 1px solid #000000;
-        margin: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        border-radius: 16px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
+        position: relative;
       }
+
       .box:hover {
-        transform: scale(1.05);
-        transition: 0.5s;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
       }
-      h3 {
-        font-size: 24px;
+
+      .box i {
+        font-size: 40px;
+        color: #f2b200;
+        margin-bottom: 15px;
+      }
+
+      .box h3 {
+        font-size: 22px;
         font-weight: 700;
         margin-bottom: 10px;
-        font-family: poppins;
-        color: #3a3535;
+        color: #1e1e1e;
       }
-      p {
+
+      .box p {
+        font-size: 16px;
+        color: #555;
+      }
+
+      .chat,
+      .alert-button {
+        position: fixed;
+        right: 20px;
+        width: 180px;
+        height: 50px;
+        border-radius: 30px;
+        background-color: #f2b200;
+        color: white;
+        font-weight: bold;
         font-size: 18px;
-        font-weight: 500;
-        color: #3a3535;
-        font-family: poppins;
-        text-align: center;
-      }
-      .footer {
-        width: 100%;
-        height: 150px;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        flex-direction: column;
-        padding: 0 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        position: fixed;
-        bottom: 0;
-        left: 0;
+        justify-content: center;
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
         z-index: 1000;
       }
 
       .chat {
-        width: 160px;
-        height: 50px;
-        background-color: #f2b200;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 30px;
-        margin: 10px;
-        position: fixed;
-        right: 0;
-        bottom: 60px;
-        font-size: 20px;
-        font-weight: 700;
-        color: #ffffff;
-        box-shadow: 3px 4px 20px 0px rgb(0 0 0);
-        cursor: pointer;
+        bottom: 80px;
       }
-      
-      .chat:hover {
-        transform: scale(1.05);
-        transition: 0.5s;
+
+      .alert-button {
+        bottom: 20px;
       }
+
+      .chat:hover,
       .alert-button:hover {
         transform: scale(1.05);
-        transition: 0.5s;
+        background-color: #d49800;
       }
+
+      .alert-button i {
+        margin-right: 10px;
+      }
+
       @media (max-width: 768px) {
-        .container1,
-        .container2 {
-          flex-direction: column;
-          margin-top: 50px;
-        }
         .box {
           width: 90%;
-          margin: 10px 0;
         }
-      }
-      .alert-button {
-        width: 160px;
-        height: 50px;
-        background-color: #f2b200;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 30px;
-        margin: 10px;
-        margin-top: 15px;
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        font-size: 20px;
-        font-weight: 700;
-        color: #ffffff;
-        box-shadow: 3px 4px 20px 0px rgb(0 0 0);
-        cursor: pointer;
+
+        .chat,
+        .alert-button {
+          width: 150px;
+          font-size: 16px;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="header">
-      <div class="heading">mitra</div>
-    </div>
+    <div class="header">Mitra</div>
+
     <div class="main">
       <div class="container1">
-        <div class="box1 box">
+        <div class="box box1">
+          <i class="fas fa-exclamation-triangle"></i>
           <h3>Report</h3>
-          <p>
-            Report any disaster or emergency situation in your area. 
-          </p>
+          <p>Report any disaster or emergency situation in your area.</p>
         </div>
-        <div class="box2 box">
+        <div class="box box2">
+          <i class="fas fa-hands-helping"></i>
           <h3>Volunteer Enrollment</h3>
-          <p>Self ready to help volunteer.</p>
+          <p>Sign up and lend a hand to those in need.</p>
         </div>
-        <div class="box3 box">
+        <div class="box box3">
+          <i class="fas fa-donate"></i>
           <h3>Fund-Raising</h3>
-          <p>Way to help the needy.</p>
+          <p>Help raise funds for victims and emergency support.</p>
         </div>
       </div>
+
       <div class="container2">
-        <div class="box4 box">
-          <h3>News and Updates</h3>
-          <p>Stay Updated with our latest Disaster Relief efforts.</p>
+        <div class="box box4">
+          <i class="fas fa-newspaper"></i>
+          <h3>News & Updates</h3>
+          <p>Stay informed with the latest disaster relief efforts.</p>
         </div>
       </div>
     </div>
-    <div class="footer">
-      <div class="chat">ChatBot</div>
-      <div class="alert-button" onclick="triggerAlert()">
-        <i class="fas fa-bell"></i>
-        <span>Send Alert</span>
-      </div>
+
+    <div class="chat">💬 ChatBot</div>
+    <div class="alert-button" onclick="triggerAlert()">
+      <i class="fas fa-bell"></i> Send Alert
     </div>
+
     <script src="sendalert.js"></script>
     <script>
-      // Function to trigger the alert
       async function triggerAlert() {
-        const recipientNumber = prompt(
-          "Enter recipient phone number (e.g., +1234567890):"
-        );
-
-        if (!recipientNumber) {
-          alert("Recipient phone number is required.");
-          return;
-        }
+        const recipientNumber = prompt("Enter recipient phone number (e.g., +1234567890):");
+        if (!recipientNumber) return alert("Recipient phone number is required.");
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
             async (position) => {
@@ -219,42 +199,25 @@
               const longitude = position.coords.longitude;
 
               try {
-                const response = await fetch(
-                  "http://localhost:3000/send-alert",
-                  {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                      toNumber: recipientNumber,
-                      latitude,
-                      longitude,
-                    }),
-                  }
-                );
+                const response = await fetch("http://localhost:3000/send-alert", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ toNumber: recipientNumber, latitude, longitude }),
+                });
 
                 const result = await response.json();
-
-                if (result.success) {
-                  alert(`Alert sent successfully! SID: ${result.sid}`);
-                } else {
-                  alert(`Failed to send alert: ${result.message}`);
-                }
+                alert(result.success ? `Alert sent! SID: ${result.sid}` : `Failed: ${result.message}`);
               } catch (error) {
-                alert(`Failed to send alert: ${error.message}`);
+                alert(`Error sending alert: ${error.message}`);
               }
             },
-            (error) => {
-              alert("Failed to get location. Please enable location services.");
-            }
+            () => alert("Location access denied. Please enable it.")
           );
         } else {
-          alert("Geolocation is not supported by your browser.");
+          alert("Geolocation not supported.");
         }
       }
-    </script>
-    <script>
+
       document.querySelector(".box1").addEventListener("click", () => {
         window.location.href = "report.html";
       });
