@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disaster Relief</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boldonse&family=Jaini&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+      }
+      .header {
+        width: 100%;
+        height: 80px;
+        font-size: 40px;
+        font-weight: 900;
+        color: #f2b200;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+      .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 0;
+        animation: fadeIn 1s ease-out;
+        margin-top: 0;
+        background-color: #f7f7f7;
+      }
+      .container1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      }
+      .container2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+      .box {
+        width: 320px;
+        height: 200px;
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+      }
+      .box:hover {
+        transform: scale(1.05);
+        transition: 0.5s;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+      }
+      h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-family: poppins;
+        color: #3a3535;
+      }
+      p {
+        font-size: 18px;
+        font-weight: 500;
+        color: #3a3535;
+        font-family: poppins;
+        text-align: center;
+      }
+      .footer {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        padding: 0 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+      }
+
+      .chat {
+        width: 160px;
+        height: 50px;
+        background-color: #f2b200;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        margin: 10px;
+        position: fixed;
+        right: 0;
+        bottom: 60px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffffff;
+        box-shadow: 3px 4px 20px 0px rgb(0 0 0);
+        cursor: pointer;
+      }
+      
+      .chat:hover {
+        transform: scale(1.05);
+        transition: 0.5s;
+      }
+      .alert-button:hover {
+        transform: scale(1.05);
+        transition: 0.5s;
+      }
+      @media (max-width: 768px) {
+        .container1,
+        .container2 {
+          flex-direction: column;
+          margin-top: 50px;
+        }
+        .box {
+          width: 90%;
+          margin: 10px 0;
+        }
+      }
+      .alert-button {
+        width: 160px;
+        height: 50px;
+        background-color: #f2b200;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        margin: 10px;
+        margin-top: 15px;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffffff;
+        box-shadow: 3px 4px 20px 0px rgb(0 0 0);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="heading">mitra</div>
+    </div>
+    <div class="main">
+      <div class="container1">
+        <div class="box1 box">
+          <h3>Report</h3>
+          <p>
+            Report any disaster or emergency situation in your area. 
+          </p>
+        </div>
+        <div class="box2 box">
+          <h3>Volunteer Enrollment</h3>
+          <p>Self ready to help volunteer.</p>
+        </div>
+        <div class="box3 box">
+          <h3>Fund-Raising</h3>
+          <p>Way to help the needy.</p>
+        </div>
+      </div>
+      <div class="container2">
+        <div class="box4 box">
+          <h3>News and Updates</h3>
+          <p>Stay Updated with our latest Disaster Relief efforts.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="chat">ChatBot</div>
+      <div class="alert-button" onclick="triggerAlert()">
+        <i class="fas fa-bell"></i>
+        <span>Send Alert</span>
+      </div>
+    </div>
+    <script src="sendalert.js"></script>
+    <script>
+      // Function to trigger the alert
+      async function triggerAlert() {
+        const recipientNumber = prompt(
+          "Enter recipient phone number (e.g., +1234567890):"
+        );
+
+        if (!recipientNumber) {
+          alert("Recipient phone number is required.");
+          return;
+        }
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            async (position) => {
+              const latitude = position.coords.latitude;
+              const longitude = position.coords.longitude;
+
+              try {
+                const response = await fetch(
+                  "http://localhost:3000/send-alert",
+                  {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      toNumber: recipientNumber,
+                      latitude,
+                      longitude,
+                    }),
+                  }
+                );
+
+                const result = await response.json();
+
+                if (result.success) {
+                  alert(`Alert sent successfully! SID: ${result.sid}`);
+                } else {
+                  alert(`Failed to send alert: ${result.message}`);
+                }
+              } catch (error) {
+                alert(`Failed to send alert: ${error.message}`);
+              }
+            },
+            (error) => {
+              alert("Failed to get location. Please enable location services.");
+            }
+          );
+        } else {
+          alert("Geolocation is not supported by your browser.");
+        }
+      }
+    </script>
+    <script>
+      document.querySelector(".box1").addEventListener("click", () => {
+        window.location.href = "report.html";
+      });
+      document.querySelector(".box2").addEventListener("click", () => {
+        window.location.href = "enrollment.html";
+      });
+      document.querySelector(".box3").addEventListener("click", () => {
+        window.location.href = "Fund.html";
+      });
+      document.querySelector(".box4").addEventListener("click", () => {
+        window.location.href = "news.html";
+      });
+      document.querySelector(".chat").addEventListener("click", () => {
+        window.location.href = "chat.html";
+      });
+    </script>
+  </body>
+</html>

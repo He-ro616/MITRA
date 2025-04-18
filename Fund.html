@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disaster Relief Fund</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+        background: linear-gradient(135deg, #1b70d1, #6aff7b);
+        color: #333;
+      }
+      h1 {
+        color: #2fff00;
+        font-family: "Poppins", sans-serif;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+      }
+      .donation-box {
+        border: 1px solid #ddd;
+        padding: 20px;
+        max-width: 400px;
+        margin: auto;
+        border-radius: 10px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        transition: transform 0.3s ease-in-out;
+      }
+      .donation-box:hover {
+        transform: scale(1.05);
+      }
+      input,
+      select {
+        width: 80%;
+        padding: 12px;
+        margin: 12px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      #receipt {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mitra Relief Fund</h1>
+    <p>Your donation helps provide emergency aid to those in need.</p>
+
+    <div class="donation-box">
+      <h3>Donate Now</h3>
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <input type="tel" id="phone" placeholder="Your Phone Number" required />
+      <input type="text" id="address" placeholder="Your Address" required />
+      <select id="cause">
+        <option value="Flood Relief">Flood Relief</option>
+        <option value="Earthquake Relief">Earthquake Relief</option>
+        <option value="Wildfire Relief">Wildfire Relief</option>
+        <option value="Pandemic Relief">Pandemic Relief</option>
+      </select>
+      <input
+        type="number"
+        id="donation-amount"
+        placeholder="Enter Amount (INR)"
+        min="1"
+        required
+      />
+      <button onclick="processDonation()">Donate via Razorpay</button>
+    </div>
+
+    <p id="receipt"></p>
+    <script>
+      function processDonation() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let address = document.getElementById("address").value;
+        let cause = document.getElementById("cause").value;
+        let amount = document.getElementById("donation-amount").value;
+
+        if (!name || !email || !phone || !address || !cause || amount < 1) {
+          alert("Please fill all details correctly.");
+          return;
+        }
+
+        let options = {
+          key: "YOUR_RAZORPAY_KEY",
+          amount: amount * 100,
+          currency: "INR",
+          name: "Mitra Relief Fund",
+          description: `Donation for ${cause}`,
+          handler: function (response) {
+            document.getElementById(
+              "receipt"
+            ).innerText = `Thank you, ${name}! Your donation of ₹${amount} for ${cause} was successful. Transaction ID: ${response.razorpay_payment_id}`;
+          },
+          prefill: {
+            name: name,
+            email: email,
+            contact: phone,
+          },
+          theme: {
+            color: "#d9534f",
+          },
+        };
+        let rzp1 = new Razorpay(options);
+        rzp1.open();
+      }
+    </script>
+  </body>
+</html>
